@@ -16,7 +16,7 @@ WealthFlow Planner is a dynamic financial engine designed to help users bridge t
 
 🛠️ Tech Stack
 
-React (Frontend Framework)
+React (Frontend Framework) - 
 
 Tailwind CSS v4 (Styling)
 

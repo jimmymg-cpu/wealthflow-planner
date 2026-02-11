@@ -1,24 +1,17 @@
-@import "tailwindcss";
-
-/* Modern Tailwind v4 syntax. 
-  This replaces the old @tailwind base/components/utilities directives.
-*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f8fafc; /* slate-50 */
-  color: #0f172a; /* slate-900 */
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 body {
   margin: 0;
   padding: 0;
-  display: block; /* Overrides the default Vite 'place-items: center' */
+  display: block;
   min-width: 100%;
   min-height: 100vh;
 }
-
-/* CRITICAL: If you have an import for './App.css' at the top of your App.jsx, 
-  please delete that line. The styles in App.css often force the app to the 
-  center of the screen and break the responsive cards.
-*/

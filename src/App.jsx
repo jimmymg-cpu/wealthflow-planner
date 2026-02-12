@@ -268,7 +268,7 @@ const App = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-slate-800 tracking-tight">WealthFlow Manual</h2>
-                  <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest">Mastering Asset Rotation</p>
+                  <p className="text-xs uppercase font-black text-slate-400 tracking-widest">Mastering Asset Rotation</p>
                 </div>
               </div>
               <button onClick={() => setIsInfoOpen(false)} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
@@ -276,23 +276,23 @@ const App = () => {
               </button>
             </div>
             
-            <div className="p-8 space-y-12">
+            <div className="p-8 space-y-12 text-left">
               <section className="space-y-6">
                 <div className="flex items-center gap-2 text-blue-600 border-b border-blue-50 pb-2">
                   <Sparkles className="w-5 h-5" />
                   <h3 className="font-black text-sm uppercase tracking-wider">The Vision</h3>
                 </div>
-                <p className="text-slate-600 leading-relaxed font-medium">
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium">
                   WealthFlow is a dynamic financial engine designed to help you bridge the gap between building security and achieving wealth.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="p-5 bg-emerald-50 rounded-2xl border border-emerald-100 space-y-2">
                     <div className="flex items-center gap-2 font-bold text-emerald-800"><ShieldCheck className="w-5 h-5" /> Phase 1: Defensive</div>
-                    <p className="text-xs text-emerald-700 leading-relaxed">Initially, you build your Emergency Fund. Split contributions 50/50 to capture early growth while filling your cash bucket.</p>
+                    <p className="text-sm text-emerald-700 leading-relaxed">Initially, you build your Emergency Fund. Split contributions 50/50 to capture early growth while filling your cash bucket.</p>
                   </div>
                   <div className="p-5 bg-indigo-50 rounded-2xl border border-indigo-100 space-y-2">
                     <div className="flex items-center gap-2 font-bold text-indigo-800"><TrendingUp className="w-5 h-5" /> Phase 2: Offensive</div>
-                    <p className="text-xs text-indigo-700 leading-relaxed">Once your safety net is set (3x-6x income), the engine pivots to 75% investing to maximize compound interest.</p>
+                    <p className="text-sm text-indigo-700 leading-relaxed">Once your safety net is set (3x-6x income), the engine pivots to 75% investing to maximize compound interest.</p>
                   </div>
                 </div>
               </section>
@@ -330,7 +330,7 @@ const App = () => {
             </div>
             
             <div className="p-8 bg-slate-50 border-t border-slate-100 flex justify-end">
-              <button onClick={() => setIsInfoOpen(false)} className="px-8 py-3 bg-blue-600 text-white font-black uppercase text-xs tracking-widest rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">Let's Begin</button>
+              <button onClick={() => setIsInfoOpen(false)} className="px-8 py-4 bg-blue-600 text-white font-black uppercase text-sm tracking-widest rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">Let's Begin</button>
             </div>
           </div>
         </div>
@@ -339,31 +339,31 @@ const App = () => {
       <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
         <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">WealthFlow Planner</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight text-left">WealthFlow Planner</h1>
             <div className="flex items-center gap-2 mt-1">
-              <p className="text-sm text-slate-500 font-medium">Intelligent Asset Rotation</p>
-              {isSaving ? <span className="text-[10px] text-blue-500 font-bold uppercase tracking-widest animate-pulse">Saving...</span> : <span className="text-[10px] text-emerald-500 font-bold uppercase tracking-widest flex items-center gap-1"><Cloud className="w-2.5 h-2.5" /> Synced</span>}
+              <p className="text-sm md:text-base text-slate-500 font-medium">Intelligent Asset Rotation</p>
+              {isSaving ? <span className="text-xs text-blue-500 font-bold uppercase tracking-widest animate-pulse">Saving...</span> : <span className="text-xs text-emerald-500 font-bold uppercase tracking-widest flex items-center gap-1"><Cloud className="w-2.5 h-2.5" /> Synced</span>}
             </div>
           </div>
           <div className="flex items-center gap-3">
-             <button onClick={() => setIsInfoOpen(true)} className="p-3 bg-white border border-slate-200 rounded-2xl flex items-center gap-2 text-xs font-extrabold group hover:shadow-md transition-all text-blue-600">
+             <button onClick={() => setIsInfoOpen(true)} className="p-4 bg-white border border-slate-200 rounded-2xl flex items-center gap-2 text-sm font-extrabold group hover:shadow-md transition-all text-blue-600">
               <Info className="w-5 h-5" /> Manual
             </button>
-            <div className="bg-white p-3 rounded-2xl shadow-sm border border-slate-200 text-right">
-              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Final Net Worth</p>
-              <p className="text-xl font-black text-slate-800">{formatCurrency(stats.finalBalance)}</p>
+            <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-right">
+              <p className="text-xs text-slate-400 font-bold uppercase tracking-tighter">Final Net Worth</p>
+              <p className="text-xl md:text-2xl font-black text-slate-800">{formatCurrency(stats.finalBalance)}</p>
             </div>
-            <button onClick={resetToDefaults} className="p-3 bg-slate-100 rounded-2xl hover:bg-slate-200 transition-colors text-slate-500"><RotateCcw className="w-5 h-5" /></button>
+            <button onClick={resetToDefaults} className="p-4 bg-slate-100 rounded-2xl hover:bg-slate-200 transition-colors text-slate-500"><RotateCcw className="w-5 h-5" /></button>
           </div>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <aside className="lg:col-span-4 space-y-6">
             <div className="bg-white p-6 rounded-2xl shadow-sm border space-y-4 border-slate-200">
-              <h2 className="font-bold flex items-center gap-2 text-slate-700"><Wallet className="w-5 h-5 text-emerald-500" /> Income Setup</h2>
+              <h2 className="font-bold flex items-center gap-2 text-slate-700 text-left text-base md:text-lg"><Wallet className="w-5 h-5 text-emerald-500" /> Income Setup</h2>
               <div className="grid grid-cols-2 gap-3">
-                <input type="number" value={income} onChange={(e) => setIncome(round(e.target.value))} className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-blue-500 outline-none" />
-                <select value={incomeType} onChange={(e) => setIncomeType(e.target.value)} className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold">
+                <input type="number" value={income} onChange={(e) => setIncome(round(e.target.value))} className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl font-bold text-base focus:ring-2 focus:ring-blue-500 outline-none" />
+                <select value={incomeType} onChange={(e) => setIncomeType(e.target.value)} className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold">
                   <option value="hourly">Hourly</option>
                   <option value="biweekly">Bi-Weekly</option>
                   <option value="monthly">Monthly</option>
@@ -372,7 +372,7 @@ const App = () => {
               </div>
               <div className="flex p-1 bg-slate-100 rounded-xl">
                 {['before', 'after'].map(s => (
-                  <button key={s} onClick={() => setTaxStatus(s)} className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${taxStatus === s ? 'bg-white shadow text-blue-600' : 'text-slate-400 hover:text-slate-600'}`}>
+                  <button key={s} onClick={() => setTaxStatus(s)} className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${taxStatus === s ? 'bg-white shadow text-blue-600' : 'text-slate-400 hover:text-slate-600'}`}>
                     {s === 'before' ? 'Pre-Tax' : 'Post-Tax'}
                   </button>
                 ))}
@@ -380,29 +380,29 @@ const App = () => {
             </div>
 
             <div className="bg-white p-6 rounded-2xl shadow-sm border space-y-4 border-slate-200">
-              <h2 className="font-bold flex items-center gap-2 text-slate-700"><Settings2 className="w-5 h-5 text-blue-500" /> Allocation Strategy</h2>
-              <div className="space-y-6">
+              <h2 className="font-bold flex items-center gap-2 text-slate-700 text-left text-base md:text-lg"><Settings2 className="w-5 h-5 text-blue-500" /> Allocation Strategy</h2>
+              <div className="space-y-6 text-left">
                  <div>
-                  <div className="flex justify-between text-xs font-bold mb-2"><span>Total % to Future</span><span>{totalAllocation}%</span></div>
-                  <input type="range" min="1" max="50" value={totalAllocation} onChange={(e) => setTotalAllocation(Number(e.target.value))} className="w-full h-2 bg-slate-200 rounded-lg appearance-none accent-blue-600" />
+                  <div className="flex justify-between text-sm font-bold mb-3"><span>Total % to Future</span><span>{totalAllocation}%</span></div>
+                  <input type="range" min="1" max="50" value={totalAllocation} onChange={(e) => setTotalAllocation(Number(e.target.value))} className="w-full h-3 bg-slate-200 rounded-lg appearance-none accent-blue-600" />
                 </div>
-                <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-700"><Target className="w-4 h-4 text-blue-500" /> Phase Switch Trigger</div>
+                <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 space-y-3">
+                  <div className="flex items-center gap-2 text-sm font-bold text-slate-700"><Target className="w-4 h-4 text-blue-500" /> Phase Switch Trigger</div>
                   <div className="flex items-center gap-3">
-                    <input type="number" value={emergencyFundMultiplier} onChange={(e) => setEmergencyFundMultiplier(Number(e.target.value))} className="w-16 px-2 py-1 bg-white border border-slate-200 rounded-lg text-sm font-bold text-center outline-none focus:ring-2 focus:ring-blue-500" />
-                    <span className="text-xs text-slate-500">x Monthly Income</span>
+                    <input type="number" value={emergencyFundMultiplier} onChange={(e) => setEmergencyFundMultiplier(Number(e.target.value))} className="w-16 px-2 py-2 bg-white border border-slate-200 rounded-lg text-base font-bold text-center outline-none focus:ring-2 focus:ring-blue-500" />
+                    <span className="text-sm text-slate-500 font-bold">x Monthly Income</span>
                   </div>
                 </div>
                 <div className="space-y-4 pt-2">
-                  <div className="bg-emerald-50/50 p-3 rounded-xl border border-emerald-100">
-                    <p className="text-[10px] font-bold text-emerald-700 uppercase mb-2 tracking-wider">Phase 1: Security Split</p>
-                    <div className="flex justify-between text-[10px] mb-1 font-bold"><span>Sav: {initialSplit}%</span><span>Inv: {100-initialSplit}%</span></div>
-                    <input type="range" min="0" max="100" value={initialSplit} onChange={(e) => setInitialSplit(Number(e.target.value))} className="w-full h-1.5 accent-emerald-500" />
+                  <div className="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100">
+                    <p className="text-xs font-bold text-emerald-700 uppercase mb-2 tracking-wider text-left">Phase 1: Security Split</p>
+                    <div className="flex justify-between text-xs mb-1 font-bold"><span>Sav: {initialSplit}%</span><span>Inv: {100-initialSplit}%</span></div>
+                    <input type="range" min="0" max="100" value={initialSplit} onChange={(e) => setInitialSplit(Number(e.target.value))} className="w-full h-2 accent-emerald-500" />
                   </div>
-                  <div className="bg-indigo-50/50 p-3 rounded-xl border border-indigo-100">
-                    <p className="text-[10px] font-bold text-indigo-700 uppercase mb-2 tracking-wider">Phase 2: Wealth Split</p>
-                    <div className="flex justify-between text-[10px] mb-1 font-bold"><span>Sav: {postGoalSplit}%</span><span>Inv: {100-postGoalSplit}%</span></div>
-                    <input type="range" min="0" max="100" value={postGoalSplit} onChange={(e) => setPostGoalSplit(Number(e.target.value))} className="w-full h-1.5 accent-indigo-500" />
+                  <div className="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100">
+                    <p className="text-xs font-bold text-indigo-700 uppercase mb-2 tracking-wider text-left">Phase 2: Wealth Split</p>
+                    <div className="flex justify-between text-xs mb-1 font-bold"><span>Sav: {postGoalSplit}%</span><span>Inv: {100-postGoalSplit}%</span></div>
+                    <input type="range" min="0" max="100" value={postGoalSplit} onChange={(e) => setPostGoalSplit(Number(e.target.value))} className="w-full h-2 accent-indigo-500" />
                   </div>
                 </div>
               </div>
@@ -410,17 +410,17 @@ const App = () => {
 
             <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4 ${duration <= 12 ? 'opacity-30 pointer-events-none' : ''}`}>
               <div className="flex justify-between items-center">
-                <h2 className="font-bold flex items-center gap-2 text-slate-700"><RefreshCw className="w-5 h-5 text-orange-500" /> Yearly Milestones</h2>
-                <button onClick={addRaise} className="p-1 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"><Plus /></button>
+                <h2 className="font-bold flex items-center gap-2 text-slate-700 text-left text-base md:text-lg"><RefreshCw className="w-5 h-5 text-orange-500" /> Yearly Milestones</h2>
+                <button onClick={addRaise} className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"><Plus /></button>
               </div>
               <div className="space-y-3">
                 {raises.map(r => (
-                  <div key={r.id} className="p-3 bg-slate-50 border border-slate-200 rounded-xl relative shadow-sm">
-                    <button onClick={() => removeRaise(r.id)} className="absolute top-2 right-2 text-slate-300 hover:text-red-400 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
-                    <div className="grid grid-cols-2 gap-2 mt-1">
+                  <div key={r.id} className="p-4 bg-slate-50 border border-slate-200 rounded-xl relative shadow-sm text-left">
+                    <button onClick={() => removeRaise(r.id)} className="absolute top-2 right-2 text-slate-300 hover:text-red-400 transition-colors"><Trash2 className="w-4 h-4" /></button>
+                    <div className="grid grid-cols-2 gap-4 mt-1">
                       <div>
-                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Effective After</label>
-                        <select value={r.afterYear} onChange={(e) => updateRaise(r.id, 'afterYear', Number(e.target.value))} className="w-full text-xs p-1 bg-white border border-slate-200 rounded font-bold outline-none">
+                        <label className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Effective After</label>
+                        <select value={r.afterYear} onChange={(e) => updateRaise(r.id, 'afterYear', Number(e.target.value))} className="w-full text-sm p-2 bg-white border border-slate-200 rounded font-bold outline-none mt-1">
                           {Array.from({ length: Math.ceil(duration/12) - 1 }).map((_, i) => (
                             <option key={i+1} value={i+1}>Year {i+1}</option>
                           ))}
@@ -428,14 +428,14 @@ const App = () => {
                       </div>
                       <div>
                         <div className="flex justify-between mb-1">
-                          <label className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Raise</label>
-                          <button onClick={() => updateRaise(r.id, 'isPercent', !r.isPercent)} className="text-[10px] font-bold text-blue-600 bg-blue-50 px-1 rounded hover:bg-blue-100 transition-all">
+                          <label className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Raise</label>
+                          <button onClick={() => updateRaise(r.id, 'isPercent', !r.isPercent)} className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded hover:bg-blue-100 transition-all text-left">
                             {r.isPercent ? 'To $' : 'To %'}
                           </button>
                         </div>
-                        <div className="relative">
-                          <span className="absolute left-1.5 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-400">{r.isPercent ? '%' : '$'}</span>
-                          <input type="number" value={r.value} onChange={(e) => updateRaise(r.id, 'value', Number(e.target.value))} className="w-full text-xs pl-5 p-1 bg-white border border-slate-200 rounded font-bold outline-none" />
+                        <div className="relative mt-1">
+                          <span className="absolute left-2 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">{r.isPercent ? '%' : '$'}</span>
+                          <input type="number" value={r.value} onChange={(e) => updateRaise(r.id, 'value', Number(e.target.value))} className="w-full text-sm pl-6 p-2 bg-white border border-slate-200 rounded font-bold outline-none" />
                         </div>
                       </div>
                     </div>
@@ -447,26 +447,26 @@ const App = () => {
 
           <main className="lg:col-span-8 space-y-6 md:space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-l-emerald-400 border border-slate-200">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Cash Reserve</p>
-                <p className="text-xl font-black text-slate-800">{formatCurrency(stats.finalSavings)}</p>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-l-emerald-400 border border-slate-200 text-center">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Cash Reserve</p>
+                <p className="text-2xl font-black text-slate-800">{formatCurrency(stats.finalSavings)}</p>
               </div>
-              <div className="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-l-indigo-400 border border-slate-200">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Market Value</p>
-                <p className="text-xl font-black text-slate-800">{formatCurrency(stats.finalInvestments)}</p>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-l-indigo-400 border border-slate-200 text-center">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Market Value</p>
+                <p className="text-2xl font-black text-slate-800">{formatCurrency(stats.finalInvestments)}</p>
               </div>
-              <div className="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-l-amber-400 border border-slate-200">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Total Growth</p>
-                <p className="text-xl font-black text-amber-600">{formatCurrency(stats.totalGains)}</p>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-l-amber-400 border border-slate-200 text-center">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Total Growth</p>
+                <p className="text-2xl font-black text-amber-600">{formatCurrency(stats.totalGains)}</p>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-left">
                <div className="flex items-center justify-between mb-8">
-                <div><h3 className="font-bold text-slate-800 tracking-tight">Growth Forecast</h3><p className="text-xs text-slate-500 font-medium">Projected net worth trajectory</p></div>
-                <div className="flex items-center gap-2 bg-slate-50 p-1 rounded-xl border border-slate-200">
+                <div><h3 className="font-bold text-slate-800 text-lg tracking-tight">Growth Forecast</h3><p className="text-sm text-slate-500 font-medium">Projected net worth trajectory</p></div>
+                <div className="flex items-center gap-2 bg-slate-50 p-2 rounded-xl border border-slate-200">
                   <Calendar className="w-4 h-4 text-slate-400 ml-1" />
-                  <select value={duration} onChange={(e) => setDuration(Number(e.target.value))} className="text-xs font-bold border-none bg-transparent outline-none pr-6 focus:ring-0">
+                  <select value={duration} onChange={(e) => setDuration(Number(e.target.value))} className="text-sm font-bold border-none bg-transparent outline-none pr-8 focus:ring-0">
                     <option value={12}>1 Year</option>
                     <option value={24}>2 Years</option>
                     <option value={60}>5 Years</option>
@@ -478,8 +478,8 @@ const App = () => {
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart data={projectionData}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                    <XAxis dataKey="month" tick={{fontSize: 10, fill: '#94a3b8'}} tickFormatter={(v) => v % 12 === 0 ? `Y${v/12}` : ''} axisLine={false} tickLine={false} />
-                    <YAxis tick={{fontSize: 10, fill: '#94a3b8'}} tickFormatter={(v) => `$${v/1000}k`} axisLine={false} tickLine={false} />
+                    <XAxis dataKey="month" tick={{fontSize: 12, fill: '#94a3b8'}} tickFormatter={(v) => v % 12 === 0 ? `Y${v/12}` : ''} axisLine={false} tickLine={false} />
+                    <YAxis tick={{fontSize: 12, fill: '#94a3b8'}} tickFormatter={(v) => `$${v/1000}k`} axisLine={false} tickLine={false} />
                     <Tooltip labelFormatter={(m) => `Month ${m}`} contentStyle={{borderRadius: '16px', border: 'none', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.1)'}} />
                     <Area type="monotone" dataKey="savings" name="Savings" stackId="1" stroke="#10b981" strokeWidth={3} fill="#10b981" fillOpacity={0.1} />
                     <Area type="monotone" dataKey="investments" name="Investments" stackId="1" stroke="#6366f1" strokeWidth={3} fill="#6366f1" fillOpacity={0.1} />
@@ -488,41 +488,41 @@ const App = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-               <div className="p-3 md:p-6 border-b flex flex-col sm:flex-row items-center justify-between bg-slate-50/50 gap-3">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-left">
+               <div className="p-4 md:p-6 border-b flex flex-col sm:flex-row items-center justify-between bg-slate-50/50 gap-4">
                 <div className="w-full sm:w-auto">
-                  <h3 className="font-bold text-slate-800 text-sm md:text-base tracking-tight uppercase">Wealth Roadmap - Year {currentTableYear}</h3>
-                  <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2 text-[9px] md:text-xs">
-                    <div className="flex items-center gap-1 font-bold">
-                      <Wallet className="w-2.5 h-2.5 text-blue-500" />
-                      <span className="text-slate-400 uppercase tracking-tighter">Income:</span> 
+                  <h3 className="font-bold text-slate-800 text-base md:text-lg tracking-tight uppercase">Wealth Roadmap - Year {currentTableYear}</h3>
+                  <div className="flex flex-wrap gap-x-4 gap-y-2 mt-2 text-xs md:text-sm">
+                    <div className="flex items-center gap-1.5 font-bold">
+                      <Wallet className="w-3.5 h-3.5 text-blue-500" />
+                      <span className="text-slate-400 uppercase tracking-tighter text-left">Income:</span> 
                       <span className="text-blue-600 font-black">{formatCurrency(strategyHeader?.income)}</span>
                     </div>
-                    <div className="flex items-center gap-1 font-bold">
-                      <span className="text-slate-400 uppercase tracking-tighter">P1 Goal:</span> 
+                    <div className="flex items-center gap-1.5 font-bold">
+                      <span className="text-slate-400 uppercase tracking-tighter text-left">P1 Goal:</span> 
                       <span className="text-emerald-600 font-black">{formatCurrency(strategyHeader?.p1.sav)} Sav / {formatCurrency(strategyHeader?.p1.inv)} Inv</span>
                     </div>
-                    <div className="flex items-center gap-1 font-bold border-l pl-2 border-slate-200">
-                      <span className="text-slate-400 uppercase tracking-tighter">P2 Goal:</span> 
+                    <div className="flex items-center gap-1.5 font-bold border-l pl-3 border-slate-200">
+                      <span className="text-slate-400 uppercase tracking-tighter text-left">P2 Goal:</span> 
                       <span className="text-indigo-600 font-black">{formatCurrency(strategyHeader?.p2.sav)} Sav / {formatCurrency(strategyHeader?.p2.inv)} Inv</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 bg-white border border-slate-200 p-1 rounded-lg shadow-sm self-end sm:self-center">
-                  <button onClick={() => setCurrentTableYear(v => Math.max(1, v-1))} className="p-1.5 hover:bg-slate-50 rounded transition-colors text-slate-600"><ChevronLeft className="w-4 h-4" /></button>
-                  <span className="text-[10px] font-black w-12 text-center text-slate-600 tracking-tighter">YEAR {currentTableYear}</span>
-                  <button onClick={() => setCurrentTableYear(v => Math.min(stats.maxYears, v+1))} className="p-1.5 hover:bg-slate-50 rounded transition-colors text-slate-600"><ChevronRight className="w-4 h-4" /></button>
+                <div className="flex items-center gap-2 bg-white border border-slate-200 p-1.5 rounded-lg shadow-sm self-end sm:self-center">
+                  <button onClick={() => setCurrentTableYear(v => Math.max(1, v-1))} className="p-2 hover:bg-slate-50 rounded transition-colors text-slate-600"><ChevronLeft className="w-5 h-5" /></button>
+                  <span className="text-xs font-black w-16 text-center text-slate-600 tracking-widest">YEAR {currentTableYear}</span>
+                  <button onClick={() => setCurrentTableYear(v => Math.min(stats.maxYears, v+1))} className="p-2 hover:bg-slate-50 rounded transition-colors text-slate-600"><ChevronRight className="w-5 h-5" /></button>
                 </div>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-left whitespace-nowrap table-fixed sm:table-auto">
                   <thead>
-                    <tr className="bg-slate-50 text-[9px] md:text-[10px] uppercase font-black text-slate-400 border-b border-slate-200">
-                      <th className="px-2 md:px-6 py-3 w-[80px] md:w-auto">Month</th>
-                      <th className="px-2 md:px-6 py-3 text-emerald-600">Savings Bal.</th>
-                      <th className="px-2 md:px-6 py-3 text-indigo-600">Invest Bal.</th>
-                      <th className="px-2 md:px-6 py-3 text-amber-600">Gains</th>
-                      <th className="px-2 md:px-6 py-3 text-slate-800">Total Net</th>
+                    <tr className="bg-slate-50 text-[11px] md:text-xs uppercase font-black text-slate-400 border-b border-slate-200">
+                      <th className="px-4 md:px-6 py-4 w-[100px] md:w-auto">Month</th>
+                      <th className="px-4 md:px-6 py-4 text-emerald-600">Savings Bal.</th>
+                      <th className="px-4 md:px-6 py-4 text-indigo-600">Invest Bal.</th>
+                      <th className="px-4 md:px-6 py-4 text-amber-600">Gains</th>
+                      <th className="px-4 md:px-6 py-4 text-slate-800">Total Net</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50">
@@ -533,22 +533,22 @@ const App = () => {
                       return (
                         <Fragment key={row.month}>
                           {isTransition && (
-                            <tr className="bg-blue-600 shadow-inner">
-                              <td colSpan="5" className="px-2 py-1.5">
-                                <div className="flex items-center gap-2 text-[8px] md:text-[10px] font-black text-white uppercase tracking-[0.2em] justify-center">
-                                  <Zap className="w-3 h-3 fill-white" /> Phase 2 Activated: Growth Pivot
+                            <tr className="bg-blue-600 shadow-inner text-center">
+                              <td colSpan="5" className="px-4 py-3">
+                                <div className="flex items-center gap-2 text-xs font-black text-white uppercase tracking-[0.2em] justify-center">
+                                  <Zap className="w-4 h-4 fill-white" /> Phase 2 Activated: Growth Pivot
                                 </div>
                               </td>
                             </tr>
                           )}
-                          <tr className="hover:bg-slate-50 transition-all text-[10px] md:text-sm">
-                            <td className={`px-2 md:px-6 py-3 font-black border-l-4 transition-colors ${row.phase === 1 ? 'bg-emerald-50/40 text-emerald-800 border-l-emerald-400' : 'bg-indigo-50/40 text-indigo-800 border-l-indigo-400'}`}>
+                          <tr className="hover:bg-slate-50 transition-all text-sm md:text-base">
+                            <td className={`px-4 md:px-6 py-5 font-black border-l-4 transition-colors ${row.phase === 1 ? 'bg-emerald-50/40 text-emerald-800 border-l-emerald-400' : 'bg-indigo-50/40 text-indigo-800 border-l-indigo-400'}`}>
                               Month {row.month}
                             </td>
-                            <td className="px-2 md:px-6 py-3 font-bold text-emerald-600/90 tracking-tighter">{formatCurrency(row.savings)}</td>
-                            <td className="px-2 md:px-6 py-3 font-bold text-indigo-600/90 tracking-tighter">{formatCurrency(row.investments)}</td>
-                            <td className="px-2 md:px-6 py-3 text-amber-600 font-extrabold tracking-tighter">+{formatCurrency(row.gains)}</td>
-                            <td className="px-2 md:px-6 py-3 font-black text-slate-800 tracking-tighter">{formatCurrency(row.total)}</td>
+                            <td className="px-4 md:px-6 py-5 font-bold text-emerald-600/90 tracking-tighter">{formatCurrency(row.savings)}</td>
+                            <td className="px-4 md:px-6 py-5 font-bold text-indigo-600/90 tracking-tighter">{formatCurrency(row.investments)}</td>
+                            <td className="px-4 md:px-6 py-5 text-amber-600 font-black tracking-tighter">+{formatCurrency(row.gains)}</td>
+                            <td className="px-4 md:px-6 py-5 font-black text-slate-800 tracking-tighter">{formatCurrency(row.total)}</td>
                           </tr>
                         </Fragment>
                       );

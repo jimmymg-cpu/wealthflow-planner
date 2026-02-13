@@ -3,7 +3,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area 
 } from 'recharts';
 import { 
-  Wallet, TrendingUp, PiggyBank, Calculator, ArrowRight, Settings2, Info, RefreshCw, Plus, Trash2, Calendar, ChevronLeft, ChevronRight, RotateCcw, Cloud, Check, X, ShieldCheck, Zap, BookOpen, Percent, DollarSign, Target, MousePointer2, Sparkles, LayoutDashboard
+  Wallet, TrendingUp, PiggyBank, Calculator, ArrowRight, Settings2, Info, RefreshCw, Plus, Trash2, Calendar, ChevronLeft, ChevronRight, RotateCcw, Cloud, Check, X, ShieldCheck, Zap, BookOpen, Percent, DollarSign, Target, MousePointer2, Sparkles, LayoutDashboard, Lightbulb, Rocket, Lock, Save
 } from 'lucide-react';
 
 // Firebase Imports
@@ -11,6 +11,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signInAnonymously } from 'firebase/auth';
 import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';
 
+// --- YOUR FIREBASE CONFIG ---
 // --- CONFIGURATION ---
 // Get these from Firebase Console -> Project Settings -> General -> Your Apps
 const firebaseConfig = {
@@ -262,13 +263,13 @@ const App = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md animate-in fade-in duration-300">
           <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl border border-slate-200 animate-in zoom-in-95 duration-300">
             <div className="sticky top-0 bg-white/90 backdrop-blur-md p-6 border-b flex items-center justify-between z-10">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-left">
                 <div className="p-2 bg-blue-600 rounded-xl text-white shadow-lg shadow-blue-100">
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-slate-800 tracking-tight">WealthFlow Manual</h2>
-                  <p className="text-xs uppercase font-black text-slate-400 tracking-widest">Mastering Asset Rotation</p>
+                  <h2 className="text-xl font-bold text-slate-800 tracking-tight">WealthFlow Guide</h2>
+                  <p className="text-xs uppercase font-black text-slate-400 tracking-widest">The Path to Financial Mastery</p>
                 </div>
               </div>
               <button onClick={() => setIsInfoOpen(false)} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
@@ -276,53 +277,106 @@ const App = () => {
               </button>
             </div>
             
-            <div className="p-8 space-y-12 text-left">
-              <section className="space-y-6">
+            <div className="p-6 md:p-8 space-y-10 text-left">
+              {/* The Purpose Section */}
+              <section className="space-y-4">
                 <div className="flex items-center gap-2 text-blue-600 border-b border-blue-50 pb-2">
-                  <Sparkles className="w-5 h-5" />
-                  <h3 className="font-black text-sm uppercase tracking-wider">The Vision</h3>
+                  <Rocket className="w-5 h-5" />
+                  <h3 className="font-black text-sm uppercase tracking-wider">The Mission</h3>
                 </div>
-                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-medium">
-                  WealthFlow is a dynamic financial engine designed to help you bridge the gap between building security and achieving wealth.
+                <p className="text-base text-slate-700 leading-relaxed font-medium">
+                  Saving money isn't just about "putting it in a box." It's about giving yourself <strong>options</strong>. WealthFlow helps you visualize how a little bit of money today grows into a massive engine that pays for your future house, car, or dream life.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="p-5 bg-emerald-50 rounded-2xl border border-emerald-100 space-y-2">
-                    <div className="flex items-center gap-2 font-bold text-emerald-800"><ShieldCheck className="w-5 h-5" /> Phase 1: Defensive</div>
-                    <p className="text-sm text-emerald-700 leading-relaxed">Initially, you build your Emergency Fund. Split contributions 50/50 to capture early growth while filling your cash bucket.</p>
+                <div className="p-5 bg-blue-50 rounded-2xl border border-blue-100 flex items-start gap-4">
+                  <Lightbulb className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <p className="text-sm text-blue-800 italic">
+                    "The goal isn't to be rich tomorrow. The goal is to be wealthy enough to do what you want, when you want, with whoever you want."
+                  </p>
+                </div>
+              </section>
+
+              {/* Seamless Syncing Section */}
+              <section className="space-y-4">
+                <div className="flex items-center gap-2 text-emerald-600 border-b border-emerald-50 pb-2">
+                  <Save className="w-5 h-5" />
+                  <h3 className="font-black text-sm uppercase tracking-wider">No Login. No Hassle.</h3>
+                </div>
+                <div className="flex flex-col md:flex-row gap-6 items-center">
+                   <div className="flex-1 space-y-3">
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      We hate passwords as much as you do. WealthFlow uses <strong>Anonymous Cloud Sync</strong>. This means your data is unique to your device, and it saves automatically every time you change a number.
+                    </p>
+                    <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full w-fit">
+                      <Cloud className="w-3.5 h-3.5 text-emerald-500" />
+                      <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest">Look for the "Synced" badge at the top!</span>
+                    </div>
                   </div>
-                  <div className="p-5 bg-indigo-50 rounded-2xl border border-indigo-100 space-y-2">
-                    <div className="flex items-center gap-2 font-bold text-indigo-800"><TrendingUp className="w-5 h-5" /> Phase 2: Offensive</div>
-                    <p className="text-sm text-indigo-700 leading-relaxed">Once your safety net is set (3x-6x income), the engine pivots to 75% investing to maximize compound interest.</p>
+                  <div className="w-full md:w-48 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center gap-2">
+                    <div className="flex items-center gap-1 text-emerald-500">
+                      <Cloud className="w-5 h-5" />
+                      <span className="text-sm font-black uppercase tracking-widest">Synced</span>
+                    </div>
+                    <div className="w-full h-1 bg-emerald-500 rounded-full"></div>
+                    <p className="text-[10px] text-slate-400 font-bold uppercase text-center">Automatic Saves</p>
                   </div>
                 </div>
               </section>
 
+              {/* The Phases Explained */}
+              <section className="space-y-6">
+                <div className="flex items-center gap-2 text-indigo-600 border-b border-indigo-50 pb-2">
+                  <TrendingUp className="w-5 h-5" />
+                  <h3 className="font-black text-sm uppercase tracking-wider">The 2-Phase Strategy</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-3 p-5 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <div className="flex items-center gap-2 font-bold text-emerald-600">
+                      <ShieldCheck className="w-5 h-5" /> 
+                      Phase 1: The Fortress
+                    </div>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      You are filling your Emergency Fund. This is your "Armor." We split your money 50/50 so you build a safety net while still planting seeds in the stock market.
+                    </p>
+                  </div>
+                  <div className="space-y-3 p-5 border border-slate-100 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <div className="flex items-center gap-2 font-bold text-indigo-600">
+                      <Zap className="w-5 h-5 fill-indigo-100" /> 
+                      Phase 2: The Rocket
+                    </div>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      Once your Armor is strong (3x monthly pay), the app <strong>pivots</strong>. It flips your contributions to 75% investing. This is where the magic of compound interest takes off.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* How to use section */}
               <section className="space-y-8">
                 <div className="flex items-center gap-2 text-blue-600 border-b border-blue-50 pb-2">
-                  <MousePointer2 className="w-5 h-5" />
-                  <h3 className="font-black text-sm uppercase tracking-wider">The Command Center</h3>
+                  <LayoutDashboard className="w-5 h-5" />
+                  <h3 className="font-black text-sm uppercase tracking-wider">How to Build Your Plan</h3>
                 </div>
                 
                 <div className="space-y-10">
                   <div className="flex gap-5">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center font-black text-emerald-600 shadow-sm border border-emerald-200">01</div>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center font-black text-slate-400 border border-slate-200">01</div>
                     <div className="space-y-2">
-                      <h5 className="font-bold text-slate-800 flex items-center gap-2 uppercase text-xs tracking-widest"><Wallet className="w-4 h-4 text-emerald-500" /> Income Setup</h5>
-                      <p className="text-sm text-slate-500 leading-relaxed">Input your gross pay. Toggle "Before Tax" to enter your tax rate. The app calculates your real take-home pay available for allocation.</p>
+                      <h5 className="font-bold text-slate-800 flex items-center gap-2 uppercase text-xs tracking-widest"><Wallet className="w-4 h-4 text-emerald-500" /> Income & Taxes</h5>
+                      <p className="text-sm text-slate-500 leading-relaxed">Enter how much you make. If you haven't paid taxes yet, use the "Pre-Tax" toggle to see what you actually keep.</p>
                     </div>
                   </div>
                   <div className="flex gap-5">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center font-black text-blue-600 shadow-sm border border-blue-200">02</div>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center font-black text-slate-400 border border-slate-200">02</div>
                     <div className="space-y-2">
-                      <h5 className="font-bold text-slate-800 flex items-center gap-2 uppercase text-xs tracking-widest"><Target className="w-4 h-4 text-blue-500" /> Trigger & Split</h5>
-                      <p className="text-sm text-slate-500 leading-relaxed">Set your total contribution % and the target multiple (e.g., 3x). Once savings reach that goal, the app pivots splits automatically.</p>
+                      <h5 className="font-bold text-slate-800 flex items-center gap-2 uppercase text-xs tracking-widest"><Target className="w-4 h-4 text-blue-500" /> Set the Trigger</h5>
+                      <p className="text-sm text-slate-500 leading-relaxed">The "Trigger" is how many months of pay you want in the bank before you start focusing 100% on getting rich. Most experts suggest 3 to 6 months.</p>
                     </div>
                   </div>
                   <div className="flex gap-5">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center font-black text-orange-600 shadow-sm border border-orange-200">03</div>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center font-black text-slate-400 border border-slate-200">03</div>
                     <div className="space-y-2">
-                      <h5 className="font-bold text-slate-800 flex items-center gap-2 uppercase text-xs tracking-widest"><RefreshCw className="w-4 h-4 text-orange-500" /> Yearly Milestones</h5>
-                      <p className="text-sm text-slate-500 leading-relaxed">Add annual raises. Toggle between % (cost-of-living) or $ (promotions) to see your future growth accelerate.</p>
+                      <h5 className="font-bold text-slate-800 flex items-center gap-2 uppercase text-xs tracking-widest"><RefreshCw className="w-4 h-4 text-orange-500" /> Add Milestones</h5>
+                      <p className="text-sm text-slate-500 leading-relaxed">Life gets better over time! Add raises or bonuses to see how your net worth explodes when your income goes up just a little bit.</p>
                     </div>
                   </div>
                 </div>
@@ -330,7 +384,7 @@ const App = () => {
             </div>
             
             <div className="p-8 bg-slate-50 border-t border-slate-100 flex justify-end">
-              <button onClick={() => setIsInfoOpen(false)} className="px-8 py-4 bg-blue-600 text-white font-black uppercase text-sm tracking-widest rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">Let's Begin</button>
+              <button onClick={() => setIsInfoOpen(false)} className="px-8 py-4 bg-blue-600 text-white font-black uppercase text-sm tracking-widest rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">Start Building Wealth</button>
             </div>
           </div>
         </div>
@@ -347,7 +401,7 @@ const App = () => {
           </div>
           <div className="flex items-center gap-3">
              <button onClick={() => setIsInfoOpen(true)} className="p-4 bg-white border border-slate-200 rounded-2xl flex items-center gap-2 text-sm font-extrabold group hover:shadow-md transition-all text-blue-600">
-              <Info className="w-5 h-5" /> Manual
+              <Info className="w-5 h-5" /> Guide
             </button>
             <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-right">
               <p className="text-xs text-slate-400 font-bold uppercase tracking-tighter">Final Net Worth</p>
